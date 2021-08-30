@@ -17,7 +17,16 @@ namespace Linq
       // Multiply by two
       Func<int, int> MultiplyBy2 = value => value * 2;
 
+      // in this instance 'var' is an IEnumerable int
       var newScores = scores.Select(MultiplyBy2);
+      foreach (var score in newScores)
+      {
+        Console.WriteLine(score);
+      }
+
+      Console.WriteLine(scores.Count());
+      // IEnumberable count becomes a Method and no longer a property.
+      Console.WriteLine(newScores.Count());
       // Make a new list to store the results
       // var newScores = new List<int>();
 
